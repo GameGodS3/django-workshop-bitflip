@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Club Name - Home</title>
+</head>
+<body>
+    <div class="pagestruct">
+        <div class="menubar">
+            <div class="logo">
+                <img src="logo.png" alt="logo" class="logopic">
+                <h1 class="clubname">Club Name</h1>
+            </div>
+            <div class="menu">
+                <a href="" ><div id="homemenu">Home</div></a>
+                <a href=""><div id="eventmenu">Events</div></a>
+                <a href=""><div>Gallery</div></a>
+            </div>
+        </div>
+        <div class="left">
+            <div class="homecontent">
+            <h1 class="who">Who are we?</h1>
+            <p class="whodesc">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto et, rerum libero unde repellendus sequi exercitationem doloremque iusto nesciunt odit aspernatur laboriosam similique.
+            </p>
+            <p> Recusandae natus ipsum tenetur odit ratione delectus pariatur quod, nesciunt perspiciatis amet unde quasi cum laboriosam reiciendis provident ut veritatis nobis facilis molestias! Voluptate ducimus fugiat voluptatibus.</p>
+            <div class="eventbtn" onclick="location.href = 'event.html'">
+                Events
+            </div>
+            </div>
+        </div>
+        <div class="right">
+            <img src="pic.jpg" alt="" style="max-width: 500px;" >
+        </div>
+    </div>
+    <script>
+        var title = document.title;
+        var home = document.getElementById('homemenu');
+        var event = document.getElementById('eventmenu');
+        if (title === "Club Name - Home"){
+            home.className = "selected";
+        }
+        else {
+            event.className = "selected";
+        }
+    </script>
+</body>
+</html>

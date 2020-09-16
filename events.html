@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="left" style="width: 65%;">
+    <h1 style="margin-left: 20px; color: var(--ylw); font-weight: lighter;">Our Events</h1>
+    <ul>
+        {% for entry in eventlist %}
+        <li class="card">
+            <h1 class="eventlabel eventtitle"> {{ entry.title }} </h1>
+            <h3 class="eventlabel eventdesc"> {{ entry.description }} </h3>
+        </li>
+        {% endfor %}
+
+        <li class="card">
+            <h1 class="eventlabel eventtitle">Event Title</h1>
+            <h3 class="eventlabel eventdesc">Event Description</h3>
+        </li>
+    </ul>
+</div>
+<div class="right" style="width: 35%; flex-direction: column;">
+    <h1 style="margin-left: 20px; color: var(--ylw); font-weight: lighter;">New Event</h1>
+    <div class="formcontainer">
+        <form action="/events" method="POST">
+            {% csrf_token %}
+            <h2 class="formtag">Event Title</h2>
+            {{ form.eventtitle }}
+            <br><br>
+            <h2 class="formtag">Event Description</h2>
+            {{ form.eventdesc }}
+            <br><br>
+            <input type="submit" value="Add Event" class="sub-btn">
+        </form>
+    </div>
+</div>
+{% endblock %}
